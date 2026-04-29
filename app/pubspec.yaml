@@ -1,0 +1,26 @@
+name: malinovka_app
+description: "Cross-platform Malinovka smart home client."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  cached_network_image: ^3.4.1
+  dio: ^5.9.2
+  flutter:
+    sdk: flutter
+  flutter_blue_plus: ^2.2.1
+  flutter_riverpod: ^3.3.1
+  go_router: ^17.2.2
+  shared_preferences: ^2.5.5
+  wifi_scan: ^0.4.1+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
