@@ -11,6 +11,11 @@ class Settings(BaseSettings):
     public_base_url: str = "http://localhost:8000"
     firmware_version: str = "0.1.0"
     firmware_filename: str = "SmartShev-firmware.bin"
+    yandex_oauth_client_id: str = "malinovka-yandex"
+    yandex_oauth_client_secret: str = "change-me"
+    yandex_oauth_code: str = "malinovka-auth-code"
+    yandex_oauth_token: str = "malinovka-dev-token"
+    yandex_user_id: str = "malinovka-local-user"
 
     model_config = SettingsConfigDict(env_prefix="MALINOVKA_", env_file=".env", extra="ignore")
 

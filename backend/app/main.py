@@ -2,7 +2,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.api.routes import catalog_router, config_router, devices_router, rooms_router
+from app.api.routes import (
+    catalog_router,
+    config_router,
+    devices_router,
+    rooms_router,
+    yandex_oauth_router,
+    yandex_router,
+)
 from app.core.config import get_settings
 from app.db import SessionLocal, engine
 from app.db.seed import seed_database
@@ -32,6 +39,8 @@ def create_app() -> FastAPI:
     app.include_router(config_router, prefix=settings.api_prefix)
     app.include_router(rooms_router, prefix=settings.api_prefix)
     app.include_router(devices_router, prefix=settings.api_prefix)
+    app.include_router(yandex_router)
+    app.include_router(yandex_oauth_router)
 
     @app.on_event("startup")
     def on_startup() -> None:
